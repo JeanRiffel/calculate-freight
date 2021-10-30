@@ -9,17 +9,17 @@ export class CalculateFreight{
     
     private _postalCodeDestination : PostalCodeDestination;
     private _item : Item;
+    private _weightVolume : WeightVolume;
 
-    constructor( readonly item : Item, postalCodeDestination : PostalCodeDestination ){
+    constructor( readonly item : Item, postalCodeDestination : PostalCodeDestination,  weightVolume : WeightVolume ){
         this._item =  item;
         this._postalCodeDestination = postalCodeDestination;
+        this._weightVolume = weightVolume;
      }
 
-    getValue(): number{
-        const weightVolume = new WeightVolume( new Volume( this._item ) , new CalculationFactor()  );
-               
-        if ( weightVolume.getValue() > this._item.weight ){
-            return weightVolume.getValue() * this._postalCodeDestination.getValue();
+    getValue(): number{ 
+        if ( this._weightVolume.getValue() > this._item.weight ){
+            return this._weightVolume.getValue() * this._postalCodeDestination.getValue();
         }else{
             return this._item.weight * this._postalCodeDestination.getValue();
         }

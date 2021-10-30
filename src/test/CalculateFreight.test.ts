@@ -1,7 +1,9 @@
 import { CalculateFreight } from "../CalculateFreight";
+import { CalculationFactor } from "../CalculationFactor";
 import { Item } from "../Item";
 import { PostalCodeDestination } from "../PostalCodeDestination";
 import { Volume } from "../Volume";
+import { WeightVolume } from "../WeightVolume";
 
 test('Whether Postal Code Destination exists is expect to be greater than 0 ', ()=>{
     const postalCodeDestination = new PostalCodeDestination(89878856);
@@ -31,7 +33,8 @@ test('Calculate freight ', ()=>{
     item.length = 18;
     item.width  = 13.5;
     item.height = 9;    
-    const calculateFreight = new CalculateFreight( item, new PostalCodeDestination( 89878856 ) );
-    const valueFreight = calculateFreight.getValue();
+    const weightVolume     = new WeightVolume( new Volume( item) , new CalculationFactor()  );    
+    const calculateFreight = new CalculateFreight( item, new PostalCodeDestination( 89878856 ), weightVolume );
+    const valueFreight     = calculateFreight.getValue();
     expect(valueFreight).toBeGreaterThan(0);
 });
