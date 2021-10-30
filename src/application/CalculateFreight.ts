@@ -1,19 +1,19 @@
-
 import { ICalculateFreight } from "../entities/ICalculateFreight";
+import { IPostalCode } from "../entities/IPostalCode";
+import { IPostalCodeRepository } from "../entities/IPostalCodeRepository";
 import { Item } from "./Item";
-import { PostalCodeDestination } from "./PostalCodeDestination";
 import { VolumeWeight } from "./VolumeWeight";
 
-export class CalculateFreight  implements ICalculateFreight {
+export class CalculateFreight  implements ICalculateFreight {   
     
-    private _postalCodeDestination : PostalCodeDestination;
     private _item : Item;
-    private _volumeWeight : VolumeWeight;
+    private _volumeWeight : VolumeWeight;    
+    private _postalCode : IPostalCode;
 
-    constructor( readonly item : Item, postalCodeDestination : PostalCodeDestination,  weightVolume : VolumeWeight ){
-        this._item =  item;
-        this._postalCodeDestination = postalCodeDestination;
-        this._volumeWeight = weightVolume;
+    constructor( readonly item : Item, weightVolume : VolumeWeight,  postalCodeDestination : number,  postalCodeRespository : IPostalCodeRepository ){
+        this._item          =  item;        
+        this._volumeWeight  = weightVolume;
+        this._postalCode    = postalCodeRespository.findByPostalCode(postalCodeDestination);
      }
 
     private isItemWeightGreaterThenWeightVolume() : boolean{
@@ -22,9 +22,9 @@ export class CalculateFreight  implements ICalculateFreight {
 
     public getValue(): number{ 
         if ( this.isItemWeightGreaterThenWeightVolume() ){
-            return this._item.weight * this._postalCodeDestination.getValue();            
+            return this._item.weight * this._postalCode.value;
         }else{
-            return this._volumeWeight.getValue() * this._postalCodeDestination.getValue();
+            return this._volumeWeight.getValue() * this._postalCode.value;
         }
     }
 }

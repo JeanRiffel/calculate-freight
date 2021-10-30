@@ -2,21 +2,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CalculateFreight = void 0;
 class CalculateFreight {
-    constructor(item, postalCodeDestination, weightVolume) {
+    constructor(item, weightVolume, postalCodeDestination, postalCodeRespository) {
         this.item = item;
         this._item = item;
-        this._postalCodeDestination = postalCodeDestination;
         this._volumeWeight = weightVolume;
+        this._postalCode = postalCodeRespository.findByPostalCode(postalCodeDestination);
     }
     isItemWeightGreaterThenWeightVolume() {
         return this._item.weight > this._volumeWeight.getValue();
     }
     getValue() {
         if (this.isItemWeightGreaterThenWeightVolume()) {
-            return this._item.weight * this._postalCodeDestination.getValue();
+            return this._item.weight * this._postalCode.value;
         }
         else {
-            return this._volumeWeight.getValue() * this._postalCodeDestination.getValue();
+            return this._volumeWeight.getValue() * this._postalCode.value;
         }
     }
 }
