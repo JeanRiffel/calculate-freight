@@ -16,10 +16,18 @@ const createItem = () : Item => {
 }
 
 const main = ()=>{
+
+
+
     const item = createItem();
     const cepDestination : number = 85497856;
+
+
     const weightVolume     = new WeightVolume( new Volume( item) , new CalculationFactor()  );    
     const calculateFreight = new CalculateFreight( item, new PostalCodeDestination( cepDestination ) , weightVolume);
+
+
+
     console.log('The value of freight is ', calculateFreight.getValue());
 }
 

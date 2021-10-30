@@ -1,11 +1,12 @@
 import { isThisTypeNode } from "typescript";
+import { CalculateFreightAbstract } from "./CalculateFreightAbstract";
 import { CalculationFactor } from "./CalculationFactor";
 import { Item } from "./Item";
 import { PostalCodeDestination } from "./PostalCodeDestination";
 import { Volume } from "./Volume";
 import { WeightVolume } from "./WeightVolume";
 
-export class CalculateFreight{
+export class CalculateFreight  implements CalculateFreightAbstract {
     
     private _postalCodeDestination : PostalCodeDestination;
     private _item : Item;

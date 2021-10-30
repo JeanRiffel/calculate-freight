@@ -1,4 +1,5 @@
 import { CalculateFreight } from "../CalculateFreight";
+import { CalculateFreightFactory } from "../CalculateFreightFactory";
 import { CalculationFactor } from "../CalculationFactor";
 import { Item } from "../Item";
 import { PostalCodeDestination } from "../PostalCodeDestination";
@@ -33,8 +34,9 @@ test('Calculate freight ', ()=>{
     item.length = 18;
     item.width  = 13.5;
     item.height = 9;    
-    const weightVolume     = new WeightVolume( new Volume( item) , new CalculationFactor()  );    
-    const calculateFreight = new CalculateFreight( item, new PostalCodeDestination( 89878856 ), weightVolume );
+    
+    const calculateFreightFactory = new CalculateFreightFactory();
+    const calculateFreight = calculateFreightFactory.createCalculateFreight(item,  89878856);
     const valueFreight     = calculateFreight.getValue();
     expect(valueFreight).toBeGreaterThan(0);
 });
