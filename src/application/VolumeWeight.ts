@@ -1,7 +1,7 @@
 import { CalculationFactor } from "./CalculationFactor";
 import { Volume } from "./Volume";
 
-export class WeightVolume {
+export class VolumeWeight {
     
     private _volume : Volume;
     private _calculatoinFactor : CalculationFactor;

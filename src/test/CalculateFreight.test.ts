@@ -1,10 +1,8 @@
-import { CalculateFreight } from "../CalculateFreight";
-import { CalculateFreightFactory } from "../CalculateFreightFactory";
-import { CalculationFactor } from "../CalculationFactor";
-import { Item } from "../Item";
-import { PostalCodeDestination } from "../PostalCodeDestination";
-import { Volume } from "../Volume";
-import { WeightVolume } from "../WeightVolume";
+import { FreightFactory } from "../application/FreightFactory";
+import { Item } from "../application/Item";
+import { PostalCodeDestination } from "../application/PostalCodeDestination";
+import { Volume } from "../application/Volume";
+
 
 test('Whether Postal Code Destination exists is expect to be greater than 0 ', ()=>{
     const postalCodeDestination = new PostalCodeDestination(89878856);
@@ -35,8 +33,8 @@ test('Calculate freight ', ()=>{
     item.width  = 13.5;
     item.height = 9;    
     
-    const calculateFreightFactory = new CalculateFreightFactory();
-    const calculateFreight = calculateFreightFactory.createCalculateFreight(item,  89878856);
-    const valueFreight     = calculateFreight.getValue();
+    const freightFactory    = new FreightFactory();
+    const calculateFreight  = freightFactory.createCalculateFreight(item,  89878856);
+    const valueFreight      = calculateFreight.getValue();
     expect(valueFreight).toBeGreaterThan(0);
 });

@@ -1,4 +1,6 @@
-export class Item {
+import { IItem } from "../entities/IItem";
+
+export class Item  implements IItem {
 
     constructor(){}
 

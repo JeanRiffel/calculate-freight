@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CalculateFreightFactory_1 = require("../CalculateFreightFactory");
-const Item_1 = require("../Item");
-const PostalCodeDestination_1 = require("../PostalCodeDestination");
-const Volume_1 = require("../Volume");
+const FreightFactory_1 = require("../application/FreightFactory");
+const Item_1 = require("../application/Item");
+const PostalCodeDestination_1 = require("../application/PostalCodeDestination");
+const Volume_1 = require("../application/Volume");
 test('Whether Postal Code Destination exists is expect to be greater than 0 ', () => {
     const postalCodeDestination = new PostalCodeDestination_1.PostalCodeDestination(89878856);
     expect(postalCodeDestination.getValue()).toBeGreaterThan(0);
@@ -29,8 +29,8 @@ test('Calculate freight ', () => {
     item.length = 18;
     item.width = 13.5;
     item.height = 9;
-    const calculateFreightFactory = new CalculateFreightFactory_1.CalculateFreightFactory();
-    const calculateFreight = calculateFreightFactory.createCalculateFreight(item, 89878856);
+    const freightFactory = new FreightFactory_1.FreightFactory();
+    const calculateFreight = freightFactory.createCalculateFreight(item, 89878856);
     const valueFreight = calculateFreight.getValue();
     expect(valueFreight).toBeGreaterThan(0);
 });
