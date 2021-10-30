@@ -8,11 +8,10 @@ import { VolumeWeight } from "./VolumeWeight";
 
 export class FreightFactory implements IFreightFactory {
     
-    createCalculateFreight(item: Item, postalCodeDestination: number): CalculateFreight {
-        
+    createCalculateFreight(item: Item, postalCodeDestination: number): CalculateFreight {        
         return new CalculateFreight( item,                                     
                                     new VolumeWeight( new Volume( item),  new CalculationFactor() ) , 
                                     postalCodeDestination,  
-                                    new PostalCodeRepositoryMemory()    );        
+                                    new PostalCodeRepositoryMemory());        
     }
 }

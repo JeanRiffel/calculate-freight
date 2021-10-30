@@ -20,11 +20,10 @@ export class CalculateFreight  implements ICalculateFreight {
         return  this._item.weight > this._volumeWeight.getValue();
     }
 
-    public getValue(): number{ 
-        if ( this.isItemWeightGreaterThenWeightVolume() ){
+    public getValue(): number{         
+        if (this.isItemWeightGreaterThenWeightVolume() ){
             return this._item.weight * this._postalCode.value;
-        }else{
-            return this._volumeWeight.getValue() * this._postalCode.value;
-        }
+        }        
+        return this._volumeWeight.getValue() * this._postalCode.value;        
     }
 }

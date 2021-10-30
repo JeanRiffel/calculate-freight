@@ -14,12 +14,9 @@ const createItem = () : Item => {
 
 const main = ()=>{
     const item = createItem();
-    const cepDestination : number = 85497856;
-    
+    const cepDestination : number = 85497856;    
     const freightFactory = new FreightFactory();
     const calculateFreight = freightFactory.createCalculateFreight(item, cepDestination);    
-    
-    
     console.log('The value of freight is ', calculateFreight.getValue());
 }
 
