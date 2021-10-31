@@ -1,7 +1,6 @@
-import { IItem } from "../../domain/entity/IItem";
+import { ItemInterface } from "../../domain/entity/ItemInterface";
 
-
-export class Item  implements IItem {
+export class Item  implements ItemInterface {
 
     constructor(){}
 

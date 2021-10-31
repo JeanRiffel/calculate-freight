@@ -1,13 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Volume = void 0;
-class Volume {
+const VolumeAbstract_1 = require("../../domain/entity/VolumeAbstract");
+class Volume extends VolumeAbstract_1.VolumeAbstract {
     constructor(item) {
+        super(item.length, item.width, item.height);
         this.item = item;
-        this._item = item;
-    }
-    getValue() {
-        return (this._item.length * this._item.width * this._item.height);
     }
 }
 exports.Volume = Volume;

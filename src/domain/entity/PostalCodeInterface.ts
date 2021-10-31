@@ -1,4 +1,4 @@
-export interface IPostalCode{
+export interface PostalCodeInterface{
     id : number;
     code : number;
     city : string;

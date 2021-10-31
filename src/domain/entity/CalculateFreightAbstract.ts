@@ -1,4 +1,4 @@
-export abstract class  ICalculateFreight{
+export abstract class  CalculateFreightAbstract{
 
     private _postalCodeValue : number = 0;
     private _itemWeight      : number = 0;

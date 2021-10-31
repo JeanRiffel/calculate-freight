@@ -1,4 +1,4 @@
-export interface IItem{
+export interface ItemInterface{
     description : string;
     weight : number;
     length : number;

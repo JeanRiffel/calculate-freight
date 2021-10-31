@@ -1,5 +1,5 @@
-import { IPostalCode } from "../entity/IPostalCode";
+import { PostalCodeInterface } from "../entity/PostalCodeInterface";
 
 export interface IPostalCodeRepository {
-    findByPostalCode( postalCode : number ) : IPostalCode;
+    findByPostalCode( postalCode : number ) : PostalCodeInterface;
 }

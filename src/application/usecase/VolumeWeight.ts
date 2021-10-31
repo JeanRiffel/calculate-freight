@@ -1,18 +1,10 @@
+import { VolumeWeightAbstract } from "../../domain/entity/VolumeWeightAbstract";
 import { CalculationFactor } from "./CalculationFactor";
 import { Volume } from "./Volume";
 
-export class VolumeWeight {
-    
-    private _volume : Volume;
-    private _calculationFactor : CalculationFactor;
+export class VolumeWeight extends VolumeWeightAbstract {   
     
     constructor( readonly volume : Volume, calculationFactor : CalculationFactor  ){
-        this._volume = volume;
-        this._calculationFactor = calculationFactor;
+        super(volume.getValue(), calculationFactor.getFactorFreight()  );        
     }
-
-    getValue() : number{
-        return this._volume.getValue() / this._calculationFactor.getFactorFreight();
-    }
-
 }

@@ -1,16 +1,11 @@
-import { IItem } from "../../domain/entity/IItem";
 
+import { ItemInterface } from "../../domain/entity/ItemInterface";
+import { VolumeAbstract } from "../../domain/entity/VolumeAbstract";
 
+export class Volume extends VolumeAbstract {
 
-export class Volume {
-
-    private _item : IItem;
-
-    constructor(readonly item : IItem ){
-        this._item = item;        
+    constructor(readonly item : ItemInterface ){
+        super(item.length, item.width, item.height );        
     }
-
-    getValue() : number{  
-        return (this._item.length * this._item.width * this._item.height);
-    }
+    
 }
