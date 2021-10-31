@@ -1,11 +1,12 @@
-import { Item } from "./Item";
+import { IItem } from "../../domain/entity/IItem";
+
 
 
 export class Volume {
 
-    private _item : Item;
+    private _item : IItem;
 
-    constructor(readonly item : Item ){
+    constructor(readonly item : IItem ){
         this._item = item;        
     }
 
