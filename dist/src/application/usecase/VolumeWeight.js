@@ -5,10 +5,10 @@ class VolumeWeight {
     constructor(volume, calculationFactor) {
         this.volume = volume;
         this._volume = volume;
-        this._calculatoinFactor = calculationFactor;
+        this._calculationFactor = calculationFactor;
     }
     getValue() {
-        return this._volume.getValue() / this._calculatoinFactor.getFactorFreight();
+        return this._volume.getValue() / this._calculationFactor.getFactorFreight();
     }
 }
 exports.VolumeWeight = VolumeWeight;
