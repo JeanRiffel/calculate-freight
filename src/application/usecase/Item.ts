@@ -4,6 +4,14 @@ export class Item  implements ItemInterface {
 
     constructor(){}
 
+    private _id: number = 0;
+    public get id(): number {
+        return this._id;
+    }
+    public set id(value: number) {
+        this._id = value;
+    }
+
     private _description: string = "";
     public get description(): string {
         return this._description;
