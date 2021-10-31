@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostalCodeRepositoryMemory = void 0;
-const PostalCode_1 = require("../../../application/usecase/PostalCode");
+const PostalCodeOutPut_1 = require("../../../application/dto/PostalCodeOutPut");
 class PostalCodeRepositoryMemory {
     constructor() {
         this.listPostalCode = [{ "id": 1, "code": 89897856, "city": "Sao Paulo", "value": 15.58 },
@@ -11,7 +11,7 @@ class PostalCodeRepositoryMemory {
         ];
     }
     convertResult(postalCodeResult) {
-        const postalCode = new PostalCode_1.PostalCode;
+        const postalCode = new PostalCodeOutPut_1.PostalCodeOutPut;
         postalCode.id = postalCodeResult.id;
         postalCode.code = postalCodeResult.code;
         postalCode.city = postalCodeResult.city;

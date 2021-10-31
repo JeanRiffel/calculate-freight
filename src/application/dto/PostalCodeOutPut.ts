@@ -1,8 +1,5 @@
-import { IPostalCode } from "../../domain/entity/IPostalCode";
+export class PostalCodeOutPut{
 
-
-export class PostalCode implements IPostalCode{
-    
     private _id: number = 0;
     public get id(): number {
         return this._id;
@@ -30,6 +27,5 @@ export class PostalCode implements IPostalCode{
     }
     public set value(value: number) {
         this._value = value;
-    }   
- 
+    }
 }
