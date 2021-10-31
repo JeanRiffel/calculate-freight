@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostalCodeRepositoryMemory = void 0;
-const PostalCode_1 = require("../application/PostalCode");
+const PostalCode_1 = require("../../../application/usecase/PostalCode");
 class PostalCodeRepositoryMemory {
     constructor() {
         this.listPostalCode = [{ "id": 1, "code": 89897856, "city": "Sao Paulo", "value": 15.58 },

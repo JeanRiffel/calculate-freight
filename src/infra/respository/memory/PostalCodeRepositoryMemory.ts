@@ -1,5 +1,6 @@
-import { IPostalCodeRepository } from "../entities/IPostalCodeRepository";
-import { PostalCode } from "../application/PostalCode";
+import { PostalCode } from "../../../application/usecase/PostalCode";
+import { IPostalCodeRepository } from "../../../domain/repository/IPostalCodeRepository";
+
 
 
 export  class PostalCodeRepositoryMemory  implements IPostalCodeRepository{

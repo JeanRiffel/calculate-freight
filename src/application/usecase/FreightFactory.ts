@@ -1,5 +1,5 @@
-import { IFreightFactory } from "../entities/IFreightFactory";
-import { PostalCodeRepositoryMemory } from "../respository/PostalCodeRepositoryMemory";
+import { IFreightFactory } from "../../domain/entity/IFreightFactory";
+import { PostalCodeRepositoryMemory } from "../../infra/respository/memory/PostalCodeRepositoryMemory";
 import { CalculateFreight } from "./CalculateFreight";
 import { CalculationFactor } from "./CalculationFactor";
 import { Item } from "./Item";

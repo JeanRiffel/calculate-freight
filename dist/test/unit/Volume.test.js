@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Item_1 = require("../src/application/Item");
-const Volume_1 = require("../src/application/Volume");
+const Item_1 = require("../../src/application/usecase/Item");
+const Volume_1 = require("../../src/application/usecase/Volume");
 test('Volume is expect to be greater than 0 ', () => {
     const item = new Item_1.Item();
     item.description = "tshirt";

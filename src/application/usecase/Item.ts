@@ -1,4 +1,5 @@
-import { IItem } from "../entities/IItem";
+import { IItem } from "../../domain/entity/IItem";
+
 
 export class Item  implements IItem {
 

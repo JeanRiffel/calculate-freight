@@ -1,6 +1,6 @@
-import { ICalculateFreight } from "../entities/ICalculateFreight";
-import { IPostalCode } from "../entities/IPostalCode";
-import { IPostalCodeRepository } from "../entities/IPostalCodeRepository";
+import { ICalculateFreight } from "../../domain/entity/ICalculateFreight";
+import { IPostalCode } from "../../domain/entity/IPostalCode";
+import { IPostalCodeRepository } from "../../domain/repository/IPostalCodeRepository";
 import { Item } from "./Item";
 import { VolumeWeight } from "./VolumeWeight";
 

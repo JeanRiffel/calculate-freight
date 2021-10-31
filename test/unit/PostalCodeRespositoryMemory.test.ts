@@ -1,4 +1,4 @@
-import { PostalCodeRepositoryMemory } from "../src/respository/PostalCodeRepositoryMemory";
+import { PostalCodeRepositoryMemory } from "../../src/infra/respository/memory/PostalCodeRepositoryMemory";
 
 test('Postal Code Repository Memory expect to be greater than 0' ,  ()=>{
     const postalCodeRespositoryMemory = new PostalCodeRepositoryMemory();

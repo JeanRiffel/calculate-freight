@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const FreightFactory_1 = require("../src/application/FreightFactory");
-const Item_1 = require("../src/application/Item");
+const FreightFactory_1 = require("../../src/application/usecase/FreightFactory");
+const Item_1 = require("../../src/application/usecase/Item");
 test('Calculate freight ', () => {
     const postalCodeDestination = 89878856;
     const item = new Item_1.Item();

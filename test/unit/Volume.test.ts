@@ -1,5 +1,6 @@
-import { Item } from "../src/application/Item";
-import { Volume } from "../src/application/Volume";
+import { Item } from "../../src/application/usecase/Item";
+import { Volume } from "../../src/application/usecase/Volume";
+
 
 test('Volume is expect to be greater than 0 ', ()=>{
     const item = new Item();

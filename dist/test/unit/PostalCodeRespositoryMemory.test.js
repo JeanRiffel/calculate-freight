@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const PostalCodeRepositoryMemory_1 = require("../src/respository/PostalCodeRepositoryMemory");
+const PostalCodeRepositoryMemory_1 = require("../../src/infra/respository/memory/PostalCodeRepositoryMemory");
 test('Postal Code Repository Memory expect to be greater than 0', () => {
     const postalCodeRespositoryMemory = new PostalCodeRepositoryMemory_1.PostalCodeRepositoryMemory();
     const postalCode = postalCodeRespositoryMemory.findByPostalCode(85497856);

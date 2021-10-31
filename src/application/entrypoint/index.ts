@@ -1,6 +1,5 @@
-
-import { FreightFactory } from "./application/FreightFactory";
-import { Item } from "./application/Item";
+import { FreightFactory } from "../usecase/FreightFactory";
+import { Item } from "../usecase/Item";
 
 const createItem = () : Item => {
     const item = new Item();

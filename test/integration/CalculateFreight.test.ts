@@ -1,5 +1,6 @@
-import { FreightFactory } from "../src/application/FreightFactory";
-import { Item } from "../src/application/Item";
+import { FreightFactory } from "../../src/application/usecase/FreightFactory";
+import { Item } from "../../src/application/usecase/Item";
+
 
 test('Calculate freight ', ()=>{
     const postalCodeDestination = 89878856;

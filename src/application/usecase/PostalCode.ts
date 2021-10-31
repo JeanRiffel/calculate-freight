@@ -1,4 +1,5 @@
-import { IPostalCode } from "../entities/IPostalCode";
+import { IPostalCode } from "../../domain/entity/IPostalCode";
+
 
 export class PostalCode implements IPostalCode{
     

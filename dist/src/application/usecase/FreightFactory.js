@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FreightFactory = void 0;
-const PostalCodeRepositoryMemory_1 = require("../respository/PostalCodeRepositoryMemory");
+const PostalCodeRepositoryMemory_1 = require("../../infra/respository/memory/PostalCodeRepositoryMemory");
 const CalculateFreight_1 = require("./CalculateFreight");
 const CalculationFactor_1 = require("./CalculationFactor");
 const Volume_1 = require("./Volume");
