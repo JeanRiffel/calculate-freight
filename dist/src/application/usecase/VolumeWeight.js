@@ -4,7 +4,7 @@ exports.VolumeWeight = void 0;
 const VolumeWeightAbstract_1 = require("../../domain/entity/VolumeWeightAbstract");
 class VolumeWeight extends VolumeWeightAbstract_1.VolumeWeightAbstract {
     constructor(volume, calculationFactor) {
-        super(volume.getValue(), calculationFactor.getFactorFreight());
+        super(volume.getSize(), calculationFactor.getFactorFreight());
         this.volume = volume;
     }
 }

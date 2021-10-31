@@ -8,9 +8,8 @@ export abstract class VolumeWeightAbstract {
         this._factorFreightValue = factorFreightValue;
     }
 
-    getValue() : number{
-        return this._volumeSize / this._factorFreightValue;
+    getWeight() : number{
+        return ( this._volumeSize / this._factorFreightValue );
     }
-
 
 }

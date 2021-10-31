@@ -1,5 +1,5 @@
 import { PostalCodeOutPut } from "../../../application/dto/PostalCodeOutPut";
-import { IPostalCodeRepository } from "../../../domain/repository/IPostalCodeRepository";
+import { IPostalCodeRepository } from "../../../domain/repository/PostalCodeRepositoryInterface";
 
 export  class PostalCodeRepositoryMemory  implements IPostalCodeRepository{
         
@@ -20,8 +20,8 @@ export  class PostalCodeRepositoryMemory  implements IPostalCodeRepository{
         return postalCode;
     }
             
-    findByPostalCode(postalCode: number): PostalCodeOutPut {
-        const postalCodeResult = this.listPostalCode.find(item => item.code === postalCode);    
+    public findByPostalCode(postalCode: number): PostalCodeOutPut {
+        let postalCodeResult  = this.listPostalCode.find(item => item.code === postalCode);    
         if(!postalCodeResult) throw new Error('Postal code not found');        
         return  this.convertResult(postalCodeResult);
     }

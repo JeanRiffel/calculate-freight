@@ -10,12 +10,12 @@ export abstract class  CalculateFreightAbstract{
         this._postalCodeValue = postalCodeValue;
     }
 
-    private isItemWeightGreaterThenWeightVolume() : boolean{
+    private isItemWeightGreaterThenVolumeWeight() : boolean{
         return  this._itemWeight > this._volumeWeight;
     }
 
     public getValue() : number{
-        if (this.isItemWeightGreaterThenWeightVolume() ){
+        if (this.isItemWeightGreaterThenVolumeWeight() ){
             return ( this._itemWeight * this._postalCodeValue );
         }        
         return ( this._volumeWeight * this._postalCodeValue );

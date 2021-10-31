@@ -10,11 +10,11 @@ class CalculateFreightAbstract {
         this._volumeWeight = volumeWeight;
         this._postalCodeValue = postalCodeValue;
     }
-    isItemWeightGreaterThenWeightVolume() {
+    isItemWeightGreaterThenVolumeWeight() {
         return this._itemWeight > this._volumeWeight;
     }
     getValue() {
-        if (this.isItemWeightGreaterThenWeightVolume()) {
+        if (this.isItemWeightGreaterThenVolumeWeight()) {
             return (this._itemWeight * this._postalCodeValue);
         }
         return (this._volumeWeight * this._postalCodeValue);

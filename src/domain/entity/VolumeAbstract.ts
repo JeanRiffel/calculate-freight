@@ -10,7 +10,7 @@ export abstract class VolumeAbstract {
         this._height = height;
     }
 
-    public getValue() : number{
+    public getSize() : number{
         return ( this._length * this._width * this._height ); 
     }
 

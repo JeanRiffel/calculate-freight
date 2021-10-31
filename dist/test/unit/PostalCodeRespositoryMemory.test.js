@@ -6,8 +6,9 @@ test('Postal Code Repository Memory expect to be greater than 0', () => {
     const postalCode = postalCodeRespositoryMemory.findByPostalCode(85497856);
     expect(postalCode.value).toBeGreaterThan(0);
 });
-test.skip('Postal Code Repository Memory expect thrown error', () => {
-    const postalCodeRespositoryMemory = new PostalCodeRepositoryMemory_1.PostalCodeRepositoryMemory();
-    const postalCode = postalCodeRespositoryMemory.findByPostalCode(9999999999);
-    expect(postalCode.value).toThrow('Postal code not found');
+test('Postal Code Repository Memory expect thrown error', () => {
+    expect(() => {
+        const postalCodeRespositoryMemory = new PostalCodeRepositoryMemory_1.PostalCodeRepositoryMemory();
+        postalCodeRespositoryMemory.findByPostalCode(9999999999);
+    }).toThrow('Postal code not found');
 });

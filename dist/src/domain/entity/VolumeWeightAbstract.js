@@ -9,8 +9,8 @@ class VolumeWeightAbstract {
         this._volumeSize = volumeSize;
         this._factorFreightValue = factorFreightValue;
     }
-    getValue() {
-        return this._volumeSize / this._factorFreightValue;
+    getWeight() {
+        return (this._volumeSize / this._factorFreightValue);
     }
 }
 exports.VolumeWeightAbstract = VolumeWeightAbstract;

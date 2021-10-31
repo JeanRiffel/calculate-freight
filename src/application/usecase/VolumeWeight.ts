@@ -5,6 +5,6 @@ import { Volume } from "./Volume";
 export class VolumeWeight extends VolumeWeightAbstract {   
     
     constructor( readonly volume : Volume, calculationFactor : CalculationFactor  ){
-        super(volume.getValue(), calculationFactor.getFactorFreight()  );        
+        super(volume.getSize(), calculationFactor.getFactorFreight()  );        
     }
 }

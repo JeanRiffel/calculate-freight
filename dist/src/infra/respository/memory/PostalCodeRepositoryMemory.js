@@ -19,7 +19,7 @@ class PostalCodeRepositoryMemory {
         return postalCode;
     }
     findByPostalCode(postalCode) {
-        const postalCodeResult = this.listPostalCode.find(item => item.code === postalCode);
+        let postalCodeResult = this.listPostalCode.find(item => item.code === postalCode);
         if (!postalCodeResult)
             throw new Error('Postal code not found');
         return this.convertResult(postalCodeResult);

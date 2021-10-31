@@ -10,7 +10,7 @@ class VolumeAbstract {
         this._width = width;
         this._height = height;
     }
-    getValue() {
+    getSize() {
         return (this._length * this._width * this._height);
     }
 }
