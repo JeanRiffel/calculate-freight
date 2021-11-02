@@ -12,5 +12,5 @@ test('adding item Order', () => {
     item.width = 5;
     const order = new Order_1.Order();
     order.addItem(item);
-    expect(order.getItems()).toEqual(expect.arrayContaining([expect.any(String)]));
+    expect(order.getItems()).toEqual(expect.arrayContaining([expect.any(Item_1.Item)]));
 });

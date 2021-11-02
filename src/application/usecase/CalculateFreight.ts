@@ -5,7 +5,7 @@ import { Item } from "./Item";
 import { VolumeWeight } from "./VolumeWeight";
 
 export class CalculateFreight extends CalculateFreightAbstract {   
-    constructor( readonly item : Item, weightVolume : VolumeWeight,  postalCodeDestination : number,  postalCodeRespository : IPostalCodeRepository ){
+    constructor( readonly item : Item, weightVolume : VolumeWeight, postalCodeDestination : number,  postalCodeRespository : IPostalCodeRepository ){
         super(item.weight, weightVolume.getWeight(),  postalCodeRespository.findByPostalCode(postalCodeDestination).value  );        
      }    
 }

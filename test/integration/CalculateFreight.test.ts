@@ -1,4 +1,5 @@
-import { FreightFactory } from "../../src/application/usecase/FreightFactory";
+
+import { FreightFactory } from "../../src/application/usecase/factory/FreightFactory";
 import { Item } from "../../src/application/usecase/Item";
 
 
