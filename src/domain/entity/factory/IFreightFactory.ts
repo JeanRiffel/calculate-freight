@@ -1,9 +1,9 @@
 
 import { CalculateFreightAbstract } from "../CalculateFreightAbstract";
-import { ItemInterface } from "../ItemInterface";
+import { OrderAbstract } from "../OrderAbstract";
 
 
 export interface IFreightFactory{
-    createCalculateFreight(item: ItemInterface, postalCodeDestination: number): CalculateFreightAbstract;
+    createCalculateFreight(order: OrderAbstract, postalCodeDestination: number): CalculateFreightAbstract;
 
 }

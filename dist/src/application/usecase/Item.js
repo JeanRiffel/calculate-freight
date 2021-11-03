@@ -3,12 +3,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Item = void 0;
 class Item {
     constructor() {
+        this._value = 0;
         this._id = 0;
         this._description = "";
         this._weight = 0;
         this._length = 0;
         this._width = 0;
         this._height = 0;
+    }
+    get value() {
+        return this._value;
+    }
+    set value(value) {
+        this._value = value;
     }
     get id() {
         return this._id;

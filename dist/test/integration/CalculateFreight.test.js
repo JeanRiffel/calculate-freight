@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const FreightFactory_1 = require("../../src/application/usecase/factory/FreightFactory");
 const Item_1 = require("../../src/application/usecase/Item");
+const Order_1 = require("../../src/application/usecase/Order");
 test('Calculate freight ', () => {
     const postalCodeDestination = 89878856;
     const item = new Item_1.Item();
@@ -10,8 +11,10 @@ test('Calculate freight ', () => {
     item.length = 18;
     item.width = 13.5;
     item.height = 9;
+    const order = new Order_1.Order();
+    order.addItem(item);
     const freightFactory = new FreightFactory_1.FreightFactory();
-    const calculateFreight = freightFactory.createCalculateFreight(item, postalCodeDestination);
+    const calculateFreight = freightFactory.createCalculateFreight(order, postalCodeDestination);
     const valueFreight = calculateFreight.getValue();
-    expect(valueFreight).toBeGreaterThan(0);
+    expect(valueFreight).toEqual(183.7975);
 });

@@ -11,5 +11,15 @@ class OrderAbstract {
     getItems() {
         return this._itemList;
     }
+    getTotalValue() {
+        let totalValue = 0;
+        this._itemList.forEach(item => { totalValue = totalValue + item.value; });
+        return totalValue;
+    }
+    getTotalWeight() {
+        let totalWeight = 0;
+        this._itemList.forEach(item => { totalWeight = totalWeight + item.weight; });
+        return totalWeight;
+    }
 }
 exports.OrderAbstract = OrderAbstract;

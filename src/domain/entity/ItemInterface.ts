@@ -5,4 +5,5 @@ export interface ItemInterface{
     length : number;
     width : number;
     height : number;
+    value : number;
 }
