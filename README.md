@@ -14,8 +14,6 @@
     - TypeScript
     - Jest
     
-
-
 Author:
     Jean Riffel
 
