@@ -1,8 +1,7 @@
 # Calculate Freight
 
-I want to calculate the freight.
+I want to calculate the freight with few variables, my goal with this project is only understand how I can apply some clean arquitecture principles in a project.
 
-With this project I want to apply some knowledge about Desing Patterns, Domain Driven Design and Clean Arquitecture.
 
 # How To Install
 
