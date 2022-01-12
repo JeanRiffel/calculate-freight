@@ -21,7 +21,6 @@ class Order extends OrderAbstract_1.OrderAbstract {
         if ((this.totalVolumeSize === 0) || (super.getItems().length !== 0)) {
             this.getVolumeSize();
         }
-        console.log(this.totalVolumeSize / new CalculationFactor_1.CalculationFactor().getFactorFreight());
         return this.totalVolumeSize / new CalculationFactor_1.CalculationFactor().getFactorFreight();
     }
 }
