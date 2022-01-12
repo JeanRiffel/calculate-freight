@@ -1,6 +1,8 @@
 <h1 align="center">Calculate Freight</h1>
 <p>
     I want to calculate the freight with few variables, my goal with this project is only understand how I can apply some clean arquitecture principles in a project.
+
+    This project will calculate freight.
 </p>
 
 
