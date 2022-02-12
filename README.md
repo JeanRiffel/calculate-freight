@@ -5,17 +5,24 @@
     This project will calculate freight.
 </p>
 
+<h2> Main commands </h2>
+
+    - Testing: npm run test
+
 
 <h2> How To Install </h2>
 
     npm install
 
-<h2> Project use </h2>
-    
-    
+<h2> Project is using </h2>
+        
     - TypeScript
     - Jest
+    - Nvm
     
+
+
+
 Author:
     Jean Riffel
 
