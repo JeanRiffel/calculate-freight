@@ -5,22 +5,17 @@
     This project will calculate freight.
 </p>
 
-<h2> Command </h2>
+<h2> Instructions </h2>
     
+    npm install
+
+<h2> Useful commands </h2>
+
+    Whether you do not have the nvm install on your computer I recommend to install it or check the .nvmrc to find out which version of node the app is using.
+
     - Run the app
        - on dev mode:  npm run start:dev
        - on test mode: npm run test
-
-<h2> How To Install </h2>
-
-    npm install
-
-<h2> Project use </h2>
-    
-    
-    - TypeScript
-    - Jest
-    
 Author:
     Jean Riffel
 
