@@ -7,7 +7,7 @@
     "tsc:init": "tsc --init",
     "build": "tsc",
     "test": "tsc && jest ./dist --forceExit",
-    "start:run": "nodemon ./dist/src/infra/web/index.js "
+    "start:dev": "tsc && nodemon ./dist/src/infra/web/index.js "
   },
   "author": "",
   "license": "ISC",
