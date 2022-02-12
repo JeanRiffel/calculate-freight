@@ -5,6 +5,11 @@
     This project will calculate freight.
 </p>
 
+<h2> Command </h2>
+    
+    - Run the app
+       - on dev mode:  npm run start:dev
+       - on test mode: npm run test
 
 <h2> How To Install </h2>
 
