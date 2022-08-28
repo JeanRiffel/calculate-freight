@@ -4,6 +4,18 @@
     This project will calculate freight.
 </p>
 
+<h2> Steps </h2>
+
+- Place a Order    
+- Adding products to a Order
+- Calculate the freight of the Order
+
+    - We can only calculate a freight when the product is inside a order.
+    - Each product has a weight, height, length and width.
+    - We need to decide between the volume or weight
+    
+
+
 <h2> Instructions </h2>
     
     npm install

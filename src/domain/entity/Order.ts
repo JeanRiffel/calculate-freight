@@ -1,48 +1,28 @@
-import Address from "../../usecase/Address";
 import Product from "./Product";
 
 export default class Order{
 
-    private _id : number = 0;
-    private _products : Product[];
-    private _freight : number = 0;
-    private _deliveryAddress : Address;
+    private productList : Array<Product>;
+    private uuid : string = '';
 
-    constructor(deliveryAddress : Address){
-        this._products = [];
-        this._deliveryAddress = deliveryAddress;
+    public getUuid(): string {
+        return this.uuid;
     }
 
-    id() : number{
-        return this._id;
+    public setUuid(uuid: string): void {
+        this.uuid = uuid;
     }
 
-    addProduct(product : Product  ){
-        this._products.push(product);
+    constructor(){
+        this.productList = new Array<Product>();
     }
 
-    getProducts() : Product[]{
-        return this._products;
+    public addProduct(product : Product){
+        this.productList.push(product);
     }
 
-    getTotal() : number{
-        let total = 0;
-        this._products.forEach( (product)=>{
-            total += product.getPrice();
-        } );
-        return total;
-    }
-
-    setFreight(value : number){
-        this._freight = value;        
-    }
-
-    getFreight():number{
-        return this._freight;
-    }
-
-    getDeliveryAddress(): Address{
-        return this._deliveryAddress;
+    public getProduct() : Array<Product>{
+        return this.productList;
     }
 
 }
