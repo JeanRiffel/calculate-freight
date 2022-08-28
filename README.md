@@ -16,7 +16,5 @@
        - on dev mode:  npm run start:dev
        - on test mode: npm run test
 Author:
-    Jean Riffel
-
-
+    Jean F. Riffel
 
