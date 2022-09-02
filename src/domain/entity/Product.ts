@@ -1,73 +1,70 @@
 export default class Product {
 
-    private uuid : string = '';
-    private description : string = '';
-    private weight : number  = 0;    
-    private height : number = 0;
-    private length : number = 0;
-    private width : number = 0;
-    private price : number = 0;
+    private _id : string = '';
+    private _description : string = '';
+    private _weight : number  = 0;    
+    private _height : number = 0;
+    private _length : number = 0;
+    private _width : number = 0;
+    private _price : number = 0;
 
-    public getUuid(): string {
-        return this.uuid;
+    constructor(id : string){   
+        this._id = id;
     }
 
-    public setUuid(uuid: string): void {
-        this.uuid = uuid;
+    get id(): string {
+        return this._id;
     }
 
-    public getDescription(): string {
-        return this.description;
+    set description(value: string){
+        this._description = value;
+    }    
+
+    get description(): string {
+        return this._description;
+    }    
+
+    get weight(): number {
+        return this._weight;
     }
 
-    public setDescription(description: string): void {
-        this.description = description;
+    set weight(value: number) {
+        this._weight = value;
     }
 
-    public getWeight(): number {
-        return this.weight;
+    get height(): number {
+        return this._height;
     }
 
-    public setWeight(weight: number): void {
-        this.weight = weight;
+    set height(value: number) {
+        this._height = value;
     }
 
-    public getHeight(): number {
-        return this.height;
+    get length(): number {
+        return this._length;
     }
 
-    public setHeight(height: number): void {
-        this.height = height;
+    set length(value: number) {
+        this._length = value;
     }
 
-    public getLength(): number {
-        return this.length;
+    get width(): number {
+        return this._width;
     }
 
-    public setLength(length: number): void {
-        this.length = length;
+    set width(value : number) {
+        this._width = value;
     }
 
-    public getWidth(): number {
-        return this.width;
+    get price(): number {
+        return this._price;
     }
 
-    public setWidth(width: number): void {
-        this.width = width;
-    }
-
-    public getPrice(): number {
-        return this.price;
-    }
-
-    public setPrice(price: number): void {
-        this.price = price;
+    set price(value: number) {
+        this._price = value;
     }
 
     public getVolume() : number{
-        return this.height * this.width * this.weight;
+        return this._height * this._width * this._weight;
     }
-
-
-
 }
