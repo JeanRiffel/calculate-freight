@@ -1,9 +1,10 @@
 import Product from "../entity/Product";
 
 export default  interface IProductRespository{
-    getUUID() : string;
+    getId() : string;
     save(product : Product): void;
-    delete(uuid : string): void;
-    update(uuid : string): void;
+    delete(id : string): void;
+    update(id : string): void;
+    getById(id : string) : Product;
     getAllProducts() : Array<Product>;
 }

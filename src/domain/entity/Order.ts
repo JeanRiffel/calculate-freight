@@ -1,28 +1,47 @@
+import Customer from "./Customer";
 import Product from "./Product";
 
 export default class Order{
 
-    private productList : Array<Product>;
-    private uuid : string = '';
-
-    public getUuid(): string {
-        return this.uuid;
+    private _productList : Array<Product>;
+    private _customer : Customer | any;
+    private _id : string = '';
+    
+    constructor(id : string){
+        this._productList = new Array<Product>();
+        this._id = id;
     }
 
-    public setUuid(uuid: string): void {
-        this.uuid = uuid;
+    get id(): string {
+        return this._id;
     }
 
-    constructor(){
-        this.productList = new Array<Product>();
+    public addCustomer(customer : Customer){
+        this._customer = customer;
+    }
+
+    public getCustomer() : Customer{
+        return this._customer;
     }
 
     public addProduct(product : Product){
-        this.productList.push(product);
+        this._productList.push(product);
     }
 
-    public getProduct() : Array<Product>{
-        return this.productList;
+    public getProducts() : Array<Product>{
+        return this._productList;
+    }
+
+    public getTotalPrice() : number{
+        return 0;
+    }
+
+    public getTotalVolume() : number{
+        return 0;
+    }
+
+    public getTotalWeight() : number{
+        return 0;
     }
 
 }
