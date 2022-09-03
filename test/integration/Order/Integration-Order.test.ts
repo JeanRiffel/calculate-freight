@@ -1,6 +1,6 @@
 import sinon from 'sinon';
-import Order from '../../domain/entity/Order';
-import Product from '../../domain/entity/Product';
+import Order from '../../../src/domain/entity/Order';
+import Product from '../../../src/domain/entity/Product';
 
 test('Order must have one product', async ()=> {       
     const key : string = '707545-5cdsf8-6s9789';
