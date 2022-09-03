@@ -1,5 +1,5 @@
-import Product from "../../../domain/entity/Product";
 import sinon from 'sinon';
+import Product from '../../../src/domain/entity/Product';
 
 test('Should create a product', async ()=>{
     const key : string = '707545-5cdsf8-6s9789';

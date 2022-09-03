@@ -1,5 +1,5 @@
-import Customer from "../../../domain/entity/Customer"
 import sinon from 'sinon';
+import Customer from '../../../src/domain/entity/Customer';
 
 test('Should create a Customer', async ()=>{
     const key : string = '707545-5cdsf8-6s9789';
