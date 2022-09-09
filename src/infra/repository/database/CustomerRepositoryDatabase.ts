@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default class CustomerRepositoryDatabase implements ICustomerRepository{
     
+    
+
     constructor(readonly databaseConnection : DatabaseConnection){
     }
 
@@ -12,10 +14,9 @@ export default class CustomerRepositoryDatabase implements ICustomerRepository{
         return uuidv4();   
     }
 
-    async save(customer: Customer): Promise<boolean> {
-        
-        const [dataCustomer] = await this.
-            databaseConnection.query(`insert into system.customer (id, name, postalCode) values ($1, $2, $3) returning *`,
+    async save(customer: Customer): Promise<boolean> {        
+        const [dataCustomer] = await this
+            .databaseConnection.query(`insert into customer (id, name, postalCode) values ($1, $2, $3) returning *`,
                 [customer.id, customer.name, customer.postalCode]   
             );
         return true;
@@ -29,8 +30,15 @@ export default class CustomerRepositoryDatabase implements ICustomerRepository{
         throw new Error("Method not implemented.");
     }
     
-    async getById(id: string): Promise<Customer> {
-        throw new Error("Method not implemented.");
+    async getById(id: string): Promise<Customer | undefined > {
+        const [itemData] = await this
+            .databaseConnection.query("select * from customer where id = $1", [id]);
+		if (!itemData) return;
+        const customer = new Customer(itemData.id);
+        customer.name = itemData.name;
+        customer.postalCode = itemData.postalCode;
+
+		return customer;       
     }
 
 
