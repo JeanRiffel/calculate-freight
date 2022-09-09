@@ -5,5 +5,5 @@ export default  interface ICustomerRepository{
     save(customer : Customer): Promise<boolean>;
     delete(id : string): Promise<boolean>;
     update(customer : Customer): Promise<boolean>;
-    getById(id : string) : Promise<Customer>;    
+    getById(id : string) : Promise<Customer | undefined>;    
 }
