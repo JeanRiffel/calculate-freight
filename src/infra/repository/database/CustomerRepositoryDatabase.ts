@@ -29,8 +29,13 @@ export default class CustomerRepositoryDatabase implements ICustomerRepository{
         throw new Error("Method not implemented.");
     }
     
-    async getById(id: string): Promise<Customer> {
-        throw new Error("Method not implemented.");
+    async getById(id: string): Promise<Customer | undefined > {
+        const [itemData] = await this.connection.query("select * from customer where id = $1", [id]);
+		if (!itemData) return;
+        const customer = Customer(itemData.id);
+        customer.name = itemData.name;
+
+		return new Customer(,   );        
     }
 
 
