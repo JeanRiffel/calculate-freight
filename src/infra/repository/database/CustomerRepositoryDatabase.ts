@@ -16,7 +16,7 @@ export default class CustomerRepositoryDatabase implements ICustomerRepository{
 
     async save(customer: Customer): Promise<boolean> {        
         const [dataCustomer] = await this
-            .databaseConnection.query(`insert into customer (id, name, postalCode) values ($1, $2, $3) returning *`,
+            .databaseConnection.query(`insert into customer (id, name, postal_code) values ($1, $2, $3) returning *`,
                 [customer.id, customer.name, customer.postalCode]   
             );
         return true;
@@ -36,7 +36,7 @@ export default class CustomerRepositoryDatabase implements ICustomerRepository{
 		if (!itemData) return;
         const customer = new Customer(itemData.id);
         customer.name = itemData.name;
-        customer.postalCode = itemData.postalCode;
+        customer.postalCode = itemData.postal_code;
 
 		return customer;       
     }
