@@ -11,7 +11,8 @@ export default class ObtainCustomer{
     async execute(customerId: string) : Promise<CustomerOutput>{
         const customer = await this.abstractRepositoryFactory
             .createCustomerRepository().getById(customerId);
-        
+        if(!customer) return new CustomerOutput('','',0);
+
         const customerOutput = new CustomerOutput(
             customer.id, customer.name, customer.postalCode
             );
