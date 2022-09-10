@@ -27,6 +27,12 @@
     - Run the app
        - on dev mode:  npm run start:dev
        - on test mode: npm run test
+
+<h2> Docker commands </h2>
+
+docker run --name basic-postgres --rm -e POSTGRES_USER=john -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=freight -p 5432:5432 -it postgres:14.1-alpine
+
+
 Author:
     Jean F. Riffel
 
