@@ -6,7 +6,7 @@ export default class DatabaseConnectionAdapter implements DatabaseConnection {
 	static instance: DatabaseConnectionAdapter;
 
 	private constructor () {
-		this.pgp = pgp()("postgres://freight_db_user:1234@172.17.0.2:5432/test-type-orm");
+		this.pgp = pgp()("postgres://john:1234@localhost:5432/freight");
 	}
 
 	static getInstance () {
@@ -20,3 +20,4 @@ export default class DatabaseConnectionAdapter implements DatabaseConnection {
 		return this.pgp.query(statement, params);
 	}
 }
+
