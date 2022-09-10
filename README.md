@@ -32,6 +32,7 @@
 
 docker run --name db-freight --rm -e POSTGRES_USER=john -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=freight -p 5432:5432 -it postgres:14.1-alpine
 
+docker-compose up -d
 
 Author:
     Jean F. Riffel
