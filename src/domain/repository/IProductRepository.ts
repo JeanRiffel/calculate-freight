@@ -1,10 +1,10 @@
 import Product from "../entity/Product";
 
-export default  interface IProductRespository{
+export default  interface IProductRepository{
     getProductId() : string;
-    save(product : Product): boolean;
-    delete(id : string): boolean;
-    update(id : string): boolean;
-    getById(id : string) : Product;
-    getAllProducts() : Array<Product>;
+    save(product : Product): Promise<boolean>;
+    delete(id : string): Promise<boolean>;
+    update(id : string): Promise<boolean>;
+    getById(id : string) : Promise<Product>;
+    getAllProducts() : Promise<Product[]>;
 }

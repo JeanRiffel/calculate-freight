@@ -5,5 +5,5 @@ import IProductRespository from "../repository/IProductRepository";
 export default interface AbstractRepositoryFactory {
 	createCustomerRepository(): ICustomerRepository;
 	//createOrderRepository(): IOrderRepository;
-	//createProductRepository(): IProductRespository;    
+	createProductRepository(): IProductRespository;    
 }
