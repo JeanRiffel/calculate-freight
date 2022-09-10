@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  db:
+  postgres:
     container_name: db-freight
     image: "postgres:14.1-alpine"
     restart: always
@@ -11,13 +11,8 @@ services:
     ports:
        - '5432:5432'
     volumes: 
-      - db:/var/lib/postgresql/data
-      - /scripts_sql/create.sql/docker-entrypoint-initdb.d/create.sql
-volumes:
-  db:
-    driver: local      
-  
-
+      - ./postgress-data:/var/lib/postgresql/data
+      - ./scripts_sql/create.sql:/docker-entrypoint-initdb.d/create.sql
 
 
 
