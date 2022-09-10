@@ -11,8 +11,4 @@ export default class DatabaseRepositoryFactory implements AbstractRepositoryFact
     createCustomerRepository(): ICustomerRepository {
         return new CustomerRepositoryDatabase(this.databaseConnection);
     }
-    
-
-
- 
 }
