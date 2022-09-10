@@ -20,7 +20,7 @@ test('Should get Customer by ID', async ()=>{
     const databaseConnection = DatabaseConnectionAdapter.getInstance();
     const databaseRepositoryFactory = new  DatabaseRepositoryFactory(databaseConnection);
 
-    const id = 'fcc7c5b8-1557-4da9-b290-ba0fb92cafe9';
+    const id = 'fce49d4a-3a53-4b7e-b2c1-5f8fe1cd43ca';
     const obtainCustomer = new ObtainCustomer( databaseRepositoryFactory );
     const customer = await obtainCustomer.execute(id);    
     expect(customer.id).toEqual(id);
