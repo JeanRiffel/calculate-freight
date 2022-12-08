@@ -3,7 +3,7 @@ import CreateProduct from "../../../src/application/usecase/product/CreateProduc
 import DatabaseConnectionAdapter from "../../../src/infra/database/DatabaseConnectionAdapter";
 import DatabaseRepositoryFactory from "../../../src/infra/factory/DatabaseRepositoryFactory";
 
-test('Create Product', async()=>{
+test.skip('Create Product', async()=>{
     const connection = DatabaseConnectionAdapter.getInstance();
     const databaseRepositoryFactory = new DatabaseRepositoryFactory(connection);
 
