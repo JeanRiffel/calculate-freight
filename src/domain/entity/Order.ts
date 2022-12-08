@@ -1,10 +1,9 @@
-import Customer from "./Customer";
 import Product from "./Product";
 
 export default class Order{
 
     private _productList : Array<Product>;
-    private _customer : Customer | any;
+
     private _id : string = '';
     
     constructor(id : string){
@@ -14,14 +13,6 @@ export default class Order{
 
     get id(): string {
         return this._id;
-    }
-
-    public addCustomer(customer : Customer){
-        this._customer = customer;
-    }
-
-    public getCustomer() : Customer{
-        return this._customer;
     }
 
     public addProduct(product : Product){

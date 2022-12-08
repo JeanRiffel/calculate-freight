@@ -11,4 +11,6 @@ test('Should create a product', async ()=>{
     product.height = 10.5;
     product.length = 8.9;
     product.width = 5.6;
+
+    expect(product).toBeInstanceOf(Product);
 });
