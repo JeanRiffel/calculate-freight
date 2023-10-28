@@ -1,4 +1,5 @@
 import ProductFields from "./ProductFields";
+import { ProductTypes } from "../utils/enumHelper";
 
 export default abstract class BaseProduct {
   private _id: string = '';
@@ -8,6 +9,7 @@ export default abstract class BaseProduct {
   private _length: number = 0;
   private _width: number = 0;
   private _price: number = 0;
+  private _type: ProductTypes;
   
   constructor(productFields: ProductFields){
     this._id = productFields.id;
@@ -17,6 +19,7 @@ export default abstract class BaseProduct {
     this._length = productFields.height;
     this._width = productFields.width;
     this._price = productFields.price;
+    this._type = productFields.type;
   }
 
   get id(): string{ return this._id }
@@ -26,6 +29,7 @@ export default abstract class BaseProduct {
   get length(): number { return this._length };
   get width(): number { return this._width };
   get price(): number { return this._price };
+  get type(): ProductTypes { return this._type}
 
   public getVolume(): number {
     return this._height * this._width * this._weight;

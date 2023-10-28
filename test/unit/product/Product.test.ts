@@ -1,6 +1,6 @@
 import sinon from 'sinon';
-import TShirtProduct from '../../../src/domains/product/entity/TShirtProduct';
-import TShirtProductFields from '../../../src/domains/product/entity/TShirtProductFields';
+import TShirtProduct from '../../../src/domains/product/entity/ShirtProduct';
+import TShirtProductFields from '../../../src/domains/product/entity/ShirtProductFields';
 
 let key : string = '707545-5cdsf8-6s9789';
 let getNewID = sinon.stub().resolves(key);
