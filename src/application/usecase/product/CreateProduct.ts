@@ -1,31 +1,33 @@
-import Product from "../../../domain/entity/Product";
-import AbstractRepositoryFactory from "../../../domain/factory/AbstractRepositoryFactory";
+import ProductFieldsAdapter from "../../../domains/product/adapter/ProductFieldsAdapter";
+import BaseProduct from "../../../domains/product/entity/BaseProduct";
+import AbstractRepositoryFactory from "../../../domains/repository/AbstractRepositoryFactory";
+import BuildProductFactory from "../../../domains/product/factory/BuildProductFactory";
 import ProductInput from "../../dto/product/ProductInput";
-
 
 export default class CreateProduct{
 
-    private abstractRepositoryFactory : AbstractRepositoryFactory
+  private abstractRepositoryFactory : AbstractRepositoryFactory<BaseProduct>
 
-    constructor(abstractRepositoryFactory : AbstractRepositoryFactory){
-        this.abstractRepositoryFactory = abstractRepositoryFactory;
-    }
+  constructor(abstractRepositoryFactory : AbstractRepositoryFactory<BaseProduct>){
+    this.abstractRepositoryFactory = abstractRepositoryFactory;		
+  }
 
-    async execute(productInput : ProductInput) : Promise<boolean>{
-        const productId = await this.abstractRepositoryFactory
-            .createProductRepository().getProductId();
+  async execute(productInput : ProductInput) : Promise<boolean>{         			
+		const productRepository = this.abstractRepositoryFactory.createRepository()
+		
+		const productId = productRepository.getId()
 
-        const product = new Product(productId);
-        product.description = productInput.description;
-        product.weight = productInput.weight;
-        product.height = productInput.height;
-        product.length = productInput.length;
-        product.width = productInput.width;
-        product.price = productInput.price;
-                
-        return await this.abstractRepositoryFactory
-            .createProductRepository()
-            .save(product);
-    } 
+		productInput.id = productId;
 
+		const productFields = new ProductFieldsAdapter(
+			productInput
+		).productFields();
+
+		const product = new BuildProductFactory()
+			.buildNewProduct(productFields, productInput.productType)
+                    
+    return await this.abstractRepositoryFactory
+      .createRepository()
+      .save(product);
+  } 
 }

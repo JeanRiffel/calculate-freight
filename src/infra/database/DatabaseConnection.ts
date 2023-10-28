@@ -1,3 +1,3 @@
 export default interface DatabaseConnection {
-    query(statement: string, params: any): any;
+    query(command: string, values: any): any;
 }
