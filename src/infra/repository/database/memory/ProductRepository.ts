@@ -15,8 +15,7 @@ export default class ProductRepository implements Repository<BaseProduct>{
 	}
 	
 	async save(product: BaseProduct): Promise<boolean> {
-		this.listProducts.push(product)
-								
+		this.listProducts.push(product)								
 		return this.listProducts.length > 0
 	}
 	

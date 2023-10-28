@@ -3,6 +3,7 @@ import CreateProduct from "../../../src/application/usecase/product/CreateProduc
 import RetrieveAllProduct from "../../../src/application/usecase/product/RetrieveAllProduct";
 import DataBaseConnectionMemory from "../../../src/infra/database/memory/DataBaseConnectionMemory";
 import ProductDatabaseRepositoryFactory from "../../../src/infra/factory/memory/ProductDatabaseRepositoryFactory";
+import ConsoleLogger from "../../../src/infra/logging/ConsoleLogger";
 
 describe('Integration - Product', ()=>{
 
@@ -10,6 +11,8 @@ describe('Integration - Product', ()=>{
   const repository = new ProductDatabaseRepositoryFactory(memoryDatabase);
 
   test('Creating an Product Use Case', async ()=>{
+    const consoleLogger = new ConsoleLogger();
+    
     const productInput = new ProductInput()
     productInput.id = '';
     productInput.description = 'The black Tshirt';
@@ -18,9 +21,9 @@ describe('Integration - Product', ()=>{
     productInput.price = 60.00;
     productInput.weight = 5;
     productInput.width = 15;
-    productInput.productType = 1;    
+    productInput.type = 0;    
     
-    const productUseCase = new CreateProduct(repository);
+    const productUseCase = new CreateProduct(repository, consoleLogger);
     const isCreated = await productUseCase.execute(productInput);
 
     expect(isCreated).toBeTruthy()

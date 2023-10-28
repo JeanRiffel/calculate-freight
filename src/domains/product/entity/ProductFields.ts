@@ -6,4 +6,5 @@ export default interface ProductFields {
   length: number;
   width: number;
   price: number;
+  type: number;
 }
