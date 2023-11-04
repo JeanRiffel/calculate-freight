@@ -1,6 +1,6 @@
 import BaseProduct from "../entity/BaseProduct";
 import ProductFields from "../entity/ProductFields";
-import ShirtProduct from "../entity/ShirtProduct";
+import ShirtProduct from "../entity/TShirtProduct";
 import SneakerProduct from "../entity/SneakerProduct";
 import { ProductTypes } from "../utils/enumHelper";
 

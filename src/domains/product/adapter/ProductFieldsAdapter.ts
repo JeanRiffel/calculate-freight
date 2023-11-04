@@ -1,5 +1,5 @@
 import ProductFields from "../entity/ProductFields";
-import TShirtProductFields from "../entity/ShirtProductFields";
+import TShirtProductFields from "../entity/TShirtProductFields";
 import SneakerProductFields from "../entity/SneakerProductFields";
 import { ProductTypes } from '../utils/enumHelper';
 
