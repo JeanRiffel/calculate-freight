@@ -5,13 +5,13 @@ import DatabaseConnection from "../../database/DatabaseConnection";
 import ProductRepository from "../../repository/database/memory/ProductRepository";
 
 export default class ProductDatabaseRepositoryFactory implements AbstractRepositoryFactory<BaseProduct> {
-  private productRepository: ProductRepository;
+  private _productRepository: ProductRepository;
 
-	constructor (readonly databaseConnection: DatabaseConnection) {
-    this.productRepository = new ProductRepository(this.databaseConnection);
+	constructor (databaseConnection: DatabaseConnection) {
+    this._productRepository = new ProductRepository(databaseConnection);
 	}
 
   createRepository(): Repository<BaseProduct> {
-    return this.productRepository;
+    return this._productRepository;
   }
 }

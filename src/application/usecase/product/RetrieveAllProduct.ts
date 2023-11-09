@@ -10,7 +10,7 @@ export default class RetrieveAllProduct{
 
   async execute() : Promise<BaseProduct[]>{         			
 		const productRepository = this.abstractRepositoryFactory.createRepository()		
-    const listProducts = await productRepository.getAllProducts();
+    const listProducts = await productRepository.getAll();
     return listProducts;
   } 
   

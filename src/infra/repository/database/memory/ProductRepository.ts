@@ -3,14 +3,14 @@ import Repository from "../../../../domains/repository/Repository";
 import DatabaseConnection from "../../../database/DatabaseConnection";
 import { v4 as uuidv4 } from 'uuid';
 
-export default class ProductRepository implements Repository<BaseProduct>{
+export default  class ProductRepository implements Repository<BaseProduct>{
   private listProducts: Array<BaseProduct>
 
 	constructor(readonly databaseConnection : DatabaseConnection){
 		this.listProducts = new Array<BaseProduct>();
 	}
 
-	getId(): string {
+	async generateId(): Promise<string> {
 		return uuidv4();
 	}
 	
@@ -31,7 +31,7 @@ export default class ProductRepository implements Repository<BaseProduct>{
 		throw new Error("Method not implemented.");
 	}
 
-	async getAllProducts(): Promise<BaseProduct[]> {
+	async getAll(): Promise<BaseProduct[]> {
 		return this.listProducts;
 	}
 
