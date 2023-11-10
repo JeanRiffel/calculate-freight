@@ -39,8 +39,7 @@ export default class PlaceOrder{
     })
 
     const order = new Order(orderId)
-    await orderRepository.save(order)
+    return  await orderRepository.save(order)
   }
-
 
 }

@@ -5,8 +5,7 @@ import DataBaseConnectionMemory from "../../../src/infra/database/memory/DataBas
 
 describe('Integration - Order',()=>{
 
-  test.skip('Creating an Order use case', ()=>{
-
+  test('Creating an Order use case', async ()=>{
     const productInput = new ProductInput()
     productInput.id = "989-4533"
     productInput.description = "tshirt"
@@ -25,10 +24,9 @@ describe('Integration - Order',()=>{
 
     const databaseConnection = DataBaseConnectionMemory.getInstance();
     const placeOrder = new PlaceOrder(databaseConnection);
-    const orderCreated = placeOrder.execute(placeOrderInput);
+    const orderCreated = await placeOrder.execute(placeOrderInput);
 
     expect(orderCreated).toBe(true)
-
   })
 
 })
