@@ -22,7 +22,7 @@ export default class CreateProduct{
 		try{
 			const productRepository = this.abstractRepositoryFactory.createRepository()
 			
-			const productId = productRepository.getId()
+			const productId = await productRepository.generateId()
 
 			productInput.id = productId;
 

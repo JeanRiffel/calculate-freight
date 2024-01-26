@@ -5,8 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default class ProductRepository implements Repository<BaseProduct>{
   constructor(readonly databaseConnection : DatabaseConnection){}
-
-	getId(): string {
+	
+	getAll(): Promise<BaseProduct[]> {
+		throw new Error("Method not implemented.");
+	}
+	
+	async generateId(): Promise<string> {
 		return uuidv4();
 	}
 	

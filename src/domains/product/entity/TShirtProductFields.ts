@@ -1,6 +1,6 @@
 import ProductFields from "./ProductFields";
 
-export default class ShirtProductFields implements ProductFields {
+export default class TShirtProductFields implements ProductFields {
   id: string = '';
   description: string = '';
   weight: number = 0;

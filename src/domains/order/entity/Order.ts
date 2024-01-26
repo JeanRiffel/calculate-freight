@@ -22,7 +22,10 @@ export default class Order{
   }
 
   public getTotalPrice() : number{
-    return 0;
+    const totalPrice = this._productList.reduce(
+      (previousValue, currentValue) => previousValue + currentValue.price, 0  
+    )
+    return totalPrice;
   }
 
   public getTotalVolume() : number{

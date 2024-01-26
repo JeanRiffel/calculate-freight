@@ -1,12 +1,13 @@
 import ProductFields from "../entity/ProductFields";
-import TShirtProductFields from "../entity/ShirtProductFields";
+import TShirtProductFields from "../entity/TShirtProductFields";
 import SneakerProductFields from "../entity/SneakerProductFields";
 import { ProductTypes } from '../utils/enumHelper';
+import ProductInput from "../../../application/dto/product/ProductInput";
 
 export default class ProductFieldsAdapter {
   private _productInput: any;
 
-  constructor(productInput: any){
+  constructor(productInput: ProductInput){
     this._productInput = productInput;
   }
   

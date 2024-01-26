@@ -2,7 +2,7 @@ import ProductInput from "../../../src/application/dto/product/ProductInput";
 import CreateProduct from "../../../src/application/usecase/product/CreateProduct";
 import RetrieveAllProduct from "../../../src/application/usecase/product/RetrieveAllProduct";
 import DataBaseConnectionMemory from "../../../src/infra/database/memory/DataBaseConnectionMemory";
-import ProductDatabaseRepositoryFactory from "../../../src/infra/factory/memory/ProductDatabaseRepositoryFactory";
+import ProductDatabaseRepositoryFactory from "../../../src/infra/factory/memory/ProductMemoryRepositoryFactory";
 import ConsoleLogger from "../../../src/infra/logging/ConsoleLogger";
 
 describe('Integration - Product', ()=>{
